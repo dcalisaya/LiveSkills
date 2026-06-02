@@ -39,8 +39,8 @@ Before writing a single line of code, execute this internal checklist:
 | Django, FastAPI, data pipeline, ML, scripting | Python 3.11+ | `references/python.md` |
 | Laravel, WordPress, cPanel, legacy web, API backends | PHP 8.2+ / Laravel | `references/php-laravel.md` |
 | React, Next.js, Node services, CLI tools, APIs | TypeScript / Node.js | `references/typescript-node.md` |
-| Infrastructure, deploy scripts, CI hooks | Bash / Shell | (inline, follow principles below) |
-| Migrations, queries, reports | SQL (PostgreSQL 16+) | (inline, follow principles below) |
+| Infrastructure, deploy scripts, CI hooks | Bash / Shell | `references/bash-shell.md` |
+| Migrations, queries, reports | SQL (PostgreSQL 16+) | `references/sql-postgresql.md` |
 
 If the task is ambiguous, ask one clarifying question before proceeding.
 
@@ -140,6 +140,8 @@ Read the relevant reference file before coding:
 - `references/python.md` — Python conventions, packages, async patterns, testing
 - `references/php-laravel.md` — Laravel architecture, Eloquent, queues, API resources
 - `references/typescript-node.md` — TypeScript config, ESM, Express/Fastify, testing
+- `references/bash-shell.md` — Strict headers, logging, deploy scripts, argument parsing
+- `references/sql-postgresql.md` — Schema conventions, query patterns, migrations, indexing
 - `references/agent-process-patterns.md` — Full pattern catalog with code templates
 
 ---

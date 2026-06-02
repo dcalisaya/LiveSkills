@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "LiveSkills",
+  "version": "1.0.0",
+  "description": "Agent skill directory for Live Developer's agentic infrastructure",
+  "maintainer": "Daniel Calisaya / Live Developer",
+  "skills": [
+    {
+      "id": "dev-code-agent",
+      "name": "Dev Code Agent",
+      "domain": "DOM-DEV",
+      "version": "1.0.0",
+      "path": "dev-code-agent/SKILL.md",
+      "description": "Multi-language programming + agent process patterns. Code generation, debugging, refactoring, APIs, pipelines.",
+      "triggers": ["write", "build", "fix", "refactor", "create a script", "set up a pipeline", "implement", "code", "API", "backend", "function"],
+      "languages": ["python", "php", "typescript", "bash", "sql"],
+      "references": [
+        "dev-code-agent/references/python.md",
+        "dev-code-agent/references/php-laravel.md",
+        "dev-code-agent/references/typescript-node.md",
+        "dev-code-agent/references/bash-shell.md",
+        "dev-code-agent/references/sql-postgresql.md",
+        "dev-code-agent/references/agent-process-patterns.md"
+      ],
+      "input": {
+        "required": ["task_description"],
+        "optional": ["language", "framework", "existing_codebase_path", "constraints"]
+      },
+      "output": {
+        "format": "plan + code + usage + notes",
+        "artifacts": ["source_files", "config_files", "test_files"]
+      }
+    },
+    {
+      "id": "frontend-ui-agent",
+      "name": "Frontend UI Agent",
+      "domain": "DOM-DEV",
+      "version": "1.0.0",
+      "path": "frontend-ui-agent/SKILL.md",
+      "description": "Landing pages, dashboards, admin panels, component systems, and web applications.",
+      "triggers": ["landing", "dashboard", "UI", "page", "screen", "interface", "component", "design system", "admin panel", "portal", "web app layout"],
+      "languages": ["html", "css", "javascript", "typescript", "jsx"],
+      "references": [
+        "frontend-ui-agent/references/landing-pages.md",
+        "frontend-ui-agent/references/dashboards.md",
+        "frontend-ui-agent/references/design-system.md",
+        "frontend-ui-agent/references/react-components.md"
+      ],
+      "input": {
+        "required": ["interface_type", "task_description"],
+        "optional": ["aesthetic_direction", "brand", "stack", "data_sources"]
+      },
+      "output": {
+        "format": "aesthetic_direction + component_map + code + customization_notes",
+        "artifacts": ["html_files", "css_files", "js_files", "component_files"]
+      }
+    },
+    {
+      "id": "devops-infra-agent",
+      "name": "DevOps & Infrastructure Agent",
+      "domain": "DOM-HST",
+      "version": "1.0.0",
+      "path": "devops-infra-agent/SKILL.md",
+      "description": "Server management, VM provisioning, CI/CD, Docker, Nginx, monitoring, backups, DNS, SSL.",
+      "triggers": ["deploy", "server", "VM", "Proxmox", "Docker", "Nginx", "CI/CD", "pipeline", "backup", "monitor", "uptime", "SSL", "DNS", "cPanel", "infrastructure", "DevOps", "provision"],
+      "languages": ["bash", "yaml", "nginx", "dockerfile"],
+      "references": [
+        "devops-infra-agent/references/proxmox-vms.md",
+        "devops-infra-agent/references/ci-cd.md",
+        "devops-infra-agent/references/monitoring.md"
+      ],
+      "input": {
+        "required": ["operation_type", "target_environment"],
+        "optional": ["server_ip", "domain", "services", "constraints"]
+      },
+      "output": {
+        "format": "plan + preflight_checks + execution + verification + rollback",
+        "artifacts": ["scripts", "config_files", "docker_compose", "nginx_configs"]
+      }
+    },
+    {
+      "id": "content-copywriting-agent",
+      "name": "Content & Copywriting Agent",
+      "domain": "DOM-MKT",
+      "version": "1.0.0",
+      "path": "content-copywriting-agent/SKILL.md",
+      "description": "SEO content, copywriting, email campaigns, social media, blog posts, brand messaging.",
+      "triggers": ["copy", "content", "SEO", "blog", "email campaign", "newsletter", "social media", "headline", "landing page copy", "ad copy", "brand voice", "content strategy", "editorial"],
+      "languages": ["markdown", "html"],
+      "references": [
+        "content-copywriting-agent/references/seo.md",
+        "content-copywriting-agent/references/copywriting.md",
+        "content-copywriting-agent/references/email-campaigns.md"
+      ],
+      "input": {
+        "required": ["content_type", "target_audience", "goal"],
+        "optional": ["brand_voice", "keywords", "word_count", "funnel_stage"]
+      },
+      "output": {
+        "format": "brief_summary + content + seo_notes + performance_tracking",
+        "artifacts": ["content_files", "meta_tags", "email_templates"]
+      }
+    },
+    {
+      "id": "qa-testing-agent",
+      "name": "QA & Testing Agent",
+      "domain": "DOM-DEV",
+      "version": "1.0.0",
+      "path": "qa-testing-agent/SKILL.md",
+      "description": "Testing strategies, code review, security audit, performance review, test coverage.",
+      "triggers": ["test", "review", "QA", "quality", "coverage", "lint", "audit", "code review", "bug", "regression", "integration test", "unit test", "e2e", "performance test", "security audit"],
+      "languages": ["python", "typescript", "php"],
+      "references": [
+        "qa-testing-agent/references/testing-strategies.md",
+        "qa-testing-agent/references/code-review.md"
+      ],
+      "input": {
+        "required": ["task_type", "target_code_or_pr"],
+        "optional": ["language", "framework", "coverage_target", "review_focus"]
+      },
+      "output": {
+        "format": "test_plan + tests + coverage_notes | summary + issues + suggestions",
+        "artifacts": ["test_files", "review_report"]
+      }
+    }
+  ],
+  "domains": {
+    "DOM-DEV": "Development — code, frontend, testing, architecture",
+    "DOM-HST": "Hosting & Infrastructure — servers, deploy, monitoring",
+    "DOM-MKT": "Marketing & Content — copy, SEO, campaigns, brand",
+    "DOM-AV": "Audiovisual — video, storyboards, production (planned)"
+  },
+  "routing": {
+    "strategy": "keyword_match",
+    "fallback": "dev-code-agent",
+    "instructions": "Match user input against the 'triggers' array of each skill. If multiple skills match, prefer the one with the most trigger matches. If no skill matches, use the fallback."
+  }
+}

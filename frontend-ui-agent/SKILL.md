@@ -144,6 +144,7 @@ Load only the relevant reference before building:
 - `references/landing-pages.md` — Hero sections, feature blocks, CTAs, conversion patterns
 - `references/dashboards.md` — Metric cards, tables, charts, sidebar navigation, admin UIs
 - `references/design-system.md` — Design tokens, component primitives, spacing/color systems
+- `references/react-components.md` — React Query, forms (RHF+Zod), Zustand, routing, API client
 
 ---
 
