@@ -7,6 +7,16 @@ El versionado sigue el [SemVer (Versionado Semántico)](https://semver.org/spec/
 
 ---
 
+## [1.2.0] — 2026-06-02
+
+### Agregado
+- **Script Wrapper para CLI (`run-skill.sh`)**: Ejecuta de manera local un skill enviándolo directamente como contexto del sistema a Claude CLI.
+- **Generador Dinámico de Prompts (`build-prompt.py`)**: Script en Python para combinar dinámicamente cualquier skill con todas sus referencias markdown y copiar el prompt resultante al portapapeles de macOS (`pbcopy`) automáticamente.
+- **Validador de Manifiesto (`validate-manifest.py`)**: Script para comprobar la integridad de `MANIFEST.json` y que no existan referencias rotas en el repositorio.
+- **CI con GitHub Actions**: Workflow automatizado para correr el script validador en cada commit o Pull Request.
+
+---
+
 ## [1.1.0] — 2026-06-02
 
 ### Modificaciones

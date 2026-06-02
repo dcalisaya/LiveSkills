@@ -174,6 +174,38 @@ cp -r _template/ mi-nuevo-agent/
 
 ---
 
+## Herramientas de Automatización (CLI y Web)
+
+El repositorio incluye herramientas para simplificar la ejecución local y la generación dinámica de prompts complejos (combinando el skill con todas sus referencias locales):
+
+### 1. Ejecutar Skill directamente en Claude CLI (`run-skill.sh`)
+Si tienes el repositorio clonado localmente y el comando `claude` CLI instalado, puedes iniciar a Claude con el skill y tu tarea en un solo comando:
+```bash
+./run-skill.sh <skill-id> "<tarea>"
+```
+*Ejemplo:*
+```bash
+./run-skill.sh dev-code-agent "Escribe una función en Python para calcular el hash sha256 de un archivo"
+```
+*(Nota: Si no tienes instalado `claude`, el script compilará todo el prompt estructurado y lo imprimirá en pantalla para que lo copies fácilmente).*
+
+### 2. Generador Dinámico de Prompts (`build-prompt.py`)
+Si usas Claude Web (Claude.ai) o ChatGPT y quieres generar un prompt súper detallado que contenga tanto el `SKILL.md` como el texto completo de **todos** sus archivos de referencia:
+```bash
+python3 build-prompt.py <skill-id>
+```
+* **macOS (Auto-copy):** El script copiará automáticamente el prompt completo compilado a tu portapapeles usando `pbcopy` para que solo tengas que hacer pegar (`Cmd+V`) en la interfaz web de tu IA.
+* **Otras plataformas:** Imprime el prompt completo en consola para que lo redirijas o copies.
+
+### 3. Validación de Integridad del Repositorio (`validate-manifest.py`)
+Para asegurar que todo funcione correctamente y evitar enlaces rotos en el manifiesto, puedes validar localmente que todas las rutas de los archivos existan:
+```bash
+python3 validate-manifest.py
+```
+*(Este script también se ejecuta automáticamente en cada commit y Pull Request a través de GitHub Actions).*
+
+---
+
 ## Prompts Operativos (Copy-Paste para CLI)
 
 Esta sección proporciona prompts operativos listos para ejecutar. Cada bloque contiene el rol, las directrices y las listas de verificación completas de cada skill en **inglés**, optimizados para que los copies y los pegues en tu CLI (por ejemplo, Claude CLI) o interfaz de chat. Esto te permite usar los skills al instante sin necesidad de clonar el repositorio en tu máquina local.
