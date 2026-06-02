@@ -1,30 +1,30 @@
-# Skill Template
+# Plantilla de Skill
 
-Use this template to create a new skill. Copy the entire `_template/` directory and rename it.
+Usa esta plantilla para crear un nuevo skill. Copia todo el directorio `_template/` y cámbiale el nombre.
 
-## Quick Start
+## Inicio Rápido
 
 ```bash
-# Create a new skill
-cp -r _template/ my-new-agent/
+# Crear un nuevo skill
+cp -r _template/ mi-nuevo-agent/
 
-# Edit the SKILL.md
-# 1. Update the YAML frontmatter (name, description, version)
-# 2. Fill in the Agent Thinking Process
-# 3. Define task types and their references
-# 4. Set quality standards
-# 5. Define structured output format
+# Editar el SKILL.md
+# 1. Actualizar el frontmatter YAML (name, description, version)
+# 2. Rellenar el Proceso de Pensamiento del Agente (Agent Thinking Process)
+# 3. Definir los tipos de tareas y sus referencias
+# 4. Establecer los estándares de calidad
+# 5. Definir el formato de salida estructurado
 
-# Create reference files
-# 1. One .md file per major topic
-# 2. Include code templates, patterns, and checklists
-# 3. Keep each reference self-contained and loadable independently
+# Crear archivos de referencia
+# 1. Un archivo .md por cada tema principal
+# 2. Incluir plantillas de código, patrones y listas de verificación
+# 3. Mantener cada referencia autocontenida y cargable de forma independiente
 ```
 
-## Conventions
+## Convenciones
 
-- Skill directory name: `kebab-case-agent/` (e.g., `data-analysis-agent/`)
-- Main file: `SKILL.md` (always this exact name)
-- References: `references/*.md` (one per topic)
-- YAML frontmatter required: `name`, `description`, `version`, `maintainer`
-- After creating the skill, add it to `MANIFEST.json` in the root directory
+- Nombre del directorio de skill: `kebab-case-agent/` (ej. `data-analysis-agent/`)
+- Archivo principal: `SKILL.md` (siempre este nombre exacto)
+- Referencias: `references/*.md` (uno por tema)
+- Frontmatter YAML requerido: `name`, `description`, `version`, `maintainer`
+- Después de crear el skill, agrégalo a `MANIFEST.json` en el directorio raíz

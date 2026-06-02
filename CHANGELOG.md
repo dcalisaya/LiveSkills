@@ -1,79 +1,87 @@
-# Changelog
+# Historial de Cambios (Changelog)
 
-All notable changes to the LiveSkills repository are documented in this file.
+Todos los cambios notables en el repositorio LiveSkills están documentados en este archivo.
 
-Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).  
-Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+El formato sigue las pautas de [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).  
+El versionado sigue el [SemVer (Versionado Semántico)](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## [1.1.0] — 2026-06-02
+
+### Modificaciones
+- **Traducción de Documentación**: Se tradujo la documentación principal del repositorio (`README.md`, `_template/README.md` y `CHANGELOG.md`) al español, manteniendo los skills y sus referencias en inglés.
+- **Prompts Operativos**: Se crearon e integraron 8 prompts operativos autotenidos (en inglés) en la sección `## Prompts Operativos (Copy-Paste para CLI)` del `README.md` principal, permitiendo copiar y pegar el skill de manera directa en el CLI sin clonar el repositorio.
 
 ---
 
 ## [1.0.0] — 2026-06-02
 
-### Full audit and expansion of the LiveSkills agent skill directory.
+### Auditoría Completa y Expansión del Directorio de Skills de Agentes
 
-### Added
+### Agregado
 
-**Phase 1 — Repository Hygiene**
-- `.gitignore` — macOS, env, dependencies, builds, IDE files
-- `LICENSE.md` — proprietary license (internal use only)
-- Fixed README repo name from `live-developer-skills/` to `LiveSkills/`
-- Normalized CSS design tokens across `landing-pages.md` and `dashboards.md` to match `design-system.md` canonical naming (`--color-*` → `--bg-*`, `--text-*`, `--border-*`, `--accent`)
-- Removed `.DS_Store` files from repository
+**Fase 1 — Higiene del Repositorio**
+- `.gitignore` — Archivos de macOS, env, dependencias, compilados, archivos de IDE.
+- `LICENSE.md` — Licencia propietaria (uso interno únicamente).
+- Corrección del nombre del repositorio en el README de `live-developer-skills/` a `LiveSkills/`.
+- Normalización de los tokens de diseño CSS en `landing-pages.md` y `dashboards.md` para coincidir con la nomenclatura canónica de `design-system.md` (`--color-*` → `--bg-*`, `--text-*`, `--border-*`, `--accent`).
+- Eliminación de archivos `.DS_Store` del repositorio.
 
-**Phase 2 — Missing References for Existing Skills**
-- `dev-code-agent/references/bash-shell.md` — strict headers, logging, deploy scripts, argument parsing, security
-- `dev-code-agent/references/sql-postgresql.md` — schema conventions, query patterns, migrations, indexing, performance
-- `frontend-ui-agent/references/react-components.md` — React Query, React Hook Form + Zod, Zustand, routing, API client
+**Fase 2 — Referencias Faltantes para Skills Existentes**
+- `dev-code-agent/references/bash-shell.md` — Cabeceras estrictas, registro de logs, scripts de despliegue, análisis de argumentos, seguridad.
+- `dev-code-agent/references/sql-postgresql.md` — Convenciones de esquemas, patrones de consultas, migraciones, indexación, rendimiento.
+- `frontend-ui-agent/references/react-components.md` — React Query, React Hook Form + Zod, Zustand, enrutamiento, cliente de API.
 
-**Phase 3 — New Critical Skills**
-- `devops-infra-agent/` — servers, VMs, CI/CD, Docker, Nginx, monitoring
-  - `references/proxmox-vms.md` — VM creation, templates, hardening, networking, backups
-  - `references/ci-cd.md` — GitHub Actions, Docker deploy, Nginx, SSL, DNS, rollbacks
-  - `references/monitoring.md` — health endpoints, Uptime Kuma, log management, incident response
-- `content-copywriting-agent/` — SEO, copywriting, email campaigns
-  - `references/seo.md` — keyword research, on-page SEO, content templates, technical SEO, schema markup
-  - `references/copywriting.md` — headline formulas, persuasion frameworks (PAS/AIDA/BAB), CTA writing, microcopy
-  - `references/email-campaigns.md` — sequences, subject lines, segmentation, deliverability (SPF/DKIM/DMARC)
-- `qa-testing-agent/` — testing, code review, security audits
-  - `references/testing-strategies.md` — patterns per language (pytest, Vitest, Pest), mocking, coverage strategy
-  - `references/code-review.md` — review checklist, comment format, severity system, PR size guidelines
+**Fase 3 — Nuevos Skills Críticos**
+- `devops-infra-agent/` — Servidores, máquinas virtuales, CI/CD, Docker, Nginx, monitoreo.
+  - `references/proxmox-vms.md` — Creación de VMs, plantillas, endurecimiento, redes, respaldos.
+  - `references/ci-cd.md` — GitHub Actions, despliegue con Docker, Nginx, SSL, DNS, retrocesos.
+  - `references/monitoring.md` — Endpoints de salud, Uptime Kuma, gestión de logs, respuesta a incidentes.
+- `content-copywriting-agent/` — SEO, redacción, campañas de correo electrónico.
+  - `references/seo.md` — Investigación de palabras clave, SEO en página, plantillas de contenido, SEO técnico, marcado de esquemas.
+  - `references/copywriting.md` — Fórmulas de titulares, marcos de persuasión (PAS/AIDA/BAB), redacción de CTA, microcopy.
+  - `references/email-campaigns.md` — Secuencias, líneas de asunto, segmentación, entregabilidad (SPF/DKIM/DMARC).
+- `qa-testing-agent/` — Pruebas, revisión de código, auditorías de seguridad.
+  - `references/testing-strategies.md` — Patrones por lenguaje (pytest, Vitest, Pest), simulación (mocking), estrategia de cobertura.
+  - `references/code-review.md` — Lista de verificación de revisión, formato de comentarios, sistema de severidad, pautas de tamaño de PR.
 
-**Phase 4 — Discovery Infrastructure**
-- `MANIFEST.json` — machine-readable skill registry with triggers, I/O schemas, routing logic
-- `_template/` — scaffold for creating new skills (SKILL.md + reference templates)
-- Updated `dev-code-agent/SKILL.md` — added bash-shell.md and sql-postgresql.md to reference section
-- Updated `frontend-ui-agent/SKILL.md` — added react-components.md to reference section
-- Complete README rewrite with expanded tree, skill index, domain map, and discovery docs
+**Fase 4 — Infraestructura de Descubrimiento**
+- `MANIFEST.json` — Registro de skills legible por máquina con disparadores, esquemas de E/S y lógica de enrutamiento.
+- `_template/` — Plantilla para crear nuevos skills (SKILL.md + plantillas de referencia).
+- Actualización de `dev-code-agent/SKILL.md` — se agregaron bash-shell.md y sql-postgresql.md a la sección de referencias.
+- Actualización de `frontend-ui-agent/SKILL.md` — se agregó react-components.md a la sección de referencias.
+- Rediseño completo de `README.md` con árbol expandido, índice de skills, mapa de dominios y documentación de descubrimiento.
 
-**Phase 5 — Secondary Skills**
-- `audiovisual-agent/` — video production pipeline (DOM-AV)
-  - `references/pre-production.md` — brief parsing, script writing (two-column format), storyboards, shot lists, creative direction
-  - `references/post-production.md` — editing workflow, color grading, audio mix (LUFS), motion graphics, export specs per platform
-- `data-analysis-agent/` — data analysis and reporting (DOM-DEV)
-  - `references/analysis-patterns.md` — EDA workflow, time series, cohort analysis, funnels, RFM, A/B testing, ETL
-  - `references/reporting.md` — report templates, Chart.js/matplotlib code, dashboard design, Excel output
-- `project-management-agent/` — planning and coordination (DOM-OPS)
-  - `references/planning.md` — project briefs, sprint planning, roadmaps, risk management, estimation
-  - `references/coordination.md` — status reports, client comms, agent orchestration, RACI matrix
-- `CHANGELOG.md` — this file
+**Fase 5 — Skills Secundarios**
+- `audiovisual-agent/` — Flujo de producción de video (DOM-AV).
+  - `references/pre-production.md` — Análisis de briefs, redacción de guiones (formato de dos columnas), guiones gráficos, listas de tomas, dirección creativa.
+  - `references/post-production.md` — Flujo de trabajo de edición, gradación de color, mezcla de audio (LUFS), gráficos en movimiento, especificaciones de exportación por plataforma.
+- `data-analysis-agent/` — Análisis de datos y generación de reportes (DOM-DEV).
+  - `references/analysis-patterns.md` — Flujo de trabajo de EDA, series de tiempo, análisis de cohortes, embudos, RFM, pruebas A/B, ETL.
+  - `references/reporting.md` — Plantillas de reportes, código Chart.js/matplotlib, diseño de tableros, salida Excel.
+- `project-management-agent/` — Planificación y coordinación (DOM-OPS).
+  - `references/planning.md` — Briefs de proyectos, planificación de sprints, hojas de ruta, gestión de riesgos, estimación.
+  - `references/coordination.md` — Reportes de estado, comunicaciones con clientes, orquestación de agentes, matriz RACI.
+- `CHANGELOG.md` — Este archivo.
 
-### Repository Stats (v1.0.0)
+### Estadísticas del Repositorio (v1.0.0)
 
-| Metric | Value |
+| Métrica | Valor |
 |---|---|
-| Total skills | 8 |
-| Total reference files | 24 |
-| Total files (md + json) | 38 |
-| Domains covered | 5 (DOM-DEV, DOM-HST, DOM-MKT, DOM-AV, DOM-OPS) |
-| Template included | Yes |
-| Machine-readable manifest | Yes |
+| Total de skills | 8 |
+| Total de archivos de referencia | 24 |
+| Total de archivos (md + json) | 38 |
+| Dominios cubiertos | 5 (DOM-DEV, DOM-HST, DOM-MKT, DOM-AV, DOM-OPS) |
+| Plantilla incluida | Sí |
+| Manifiesto para máquina | Sí |
 
 ---
 
 ## [0.0.0] — 2025-06
 
-### Added
-- Initial creation by Daniel Calisaya / Live Developer.
-- `dev-code-agent/` with 4 references (python, php-laravel, typescript-node, agent-process-patterns).
-- `frontend-ui-agent/` with 3 references (landing-pages, dashboards, design-system).
-- `README.md` with basic structure and skill index.
+### Agregado
+- Creación inicial por Daniel Calisaya / Live Developer.
+- `dev-code-agent/` con 4 referencias (python, php-laravel, typescript-node, agent-process-patterns).
+- `frontend-ui-agent/` con 3 referencias (landing-pages, dashboards, design-system).
+- `README.md` con estructura básica e índice de skills.
