@@ -157,7 +157,7 @@ Pattern: Card gallery → Review modal → Timeline → Status badges
     <tbody>
       <tr class="data-table__row">
         <td class="data-table__td">Brand Kit v2</td>
-        <td class="data-table__td">GIZ Ecuador</td>
+        <td class="data-table__td">Acme Corp</td>
         <td class="data-table__td">
           <span class="badge badge--review">In Review</span>
         </td>

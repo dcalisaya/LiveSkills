@@ -364,7 +364,7 @@ test('returns paginated results with default limit')
 
 ```yaml
 # Run tests on every PR
-- run: npm test -- --coverage --reporter=verbose
+- run: pnpm test -- --coverage --reporter=verbose
 - run: |
     COVERAGE=$(npx vitest run --coverage --reporter=json 2>/dev/null | jq '.total.lines.pct')
     if (( $(echo "$COVERAGE < 80" | bc -l) )); then

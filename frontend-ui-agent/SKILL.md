@@ -130,7 +130,7 @@ Always deliver in this structure:
 
 When building for Live Developer itself:
 - Brand voice: professional, direct, technically credible. No fluff.
-- Clients: B2B (GIZ, GNU Health, MAE Ecuador, agencies).
+- Clients: B2B enterprises and digital agencies.
 - Product family: LiveApp (SaaS platform), LiveCMS Pro (CMS), Live Developer MCP (AI ops).
 - Colors: use dark tones with a single strong accent. Reference `references/design-system.md`.
 - Typography direction: technical precision meets editorial confidence.

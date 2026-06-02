@@ -148,7 +148,7 @@ Duration: Hold 3-4 seconds, then fade out
 [client]_[project]_[format]_[version]_[date].[ext]
 
 Examples:
-giz_annual-report_explainer_v2_20260601.mp4
+acme_annual-report_explainer_v2_20260601.mp4
 livedeveloper_liveapp-launch_reel_v1_20260601.mp4
 livedeveloper_liveapp-launch_reel_v1_20260601_master.mov
 ```

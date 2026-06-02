@@ -38,7 +38,7 @@ Before writing a single line of code, execute this internal checklist:
 |---|---|---|
 | Django, FastAPI, data pipeline, ML, scripting | Python 3.11+ | `references/python.md` |
 | Laravel, WordPress, cPanel, legacy web, API backends | PHP 8.2+ / Laravel | `references/php-laravel.md` |
-| React, Next.js, Node services, CLI tools, APIs | TypeScript / Node.js | `references/typescript-node.md` |
+| React + Vite + TailwindCSS, Node services, CLI tools, APIs | TypeScript / Node.js | `references/typescript-node.md` |
 | Infrastructure, deploy scripts, CI hooks | Bash / Shell | `references/bash-shell.md` |
 | Migrations, queries, reports | SQL (PostgreSQL 16+) | `references/sql-postgresql.md` |
 

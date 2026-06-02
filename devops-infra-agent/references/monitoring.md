@@ -263,7 +263,7 @@ docker compose restart app
 pm2 restart app
 
 # Rollback to last known good
-cd /opt/app && git checkout HEAD~1 && npm ci && npm run build && pm2 restart app
+cd /opt/app && git checkout HEAD~1 && pnpm install --frozen-lockfile && pnpm build && pm2 restart app
 
 # Restart Nginx
 sudo systemctl restart nginx

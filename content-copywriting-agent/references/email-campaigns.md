@@ -130,12 +130,12 @@ If you have questions, just reply to this email. A human reads it.
 ### Email 2: Value Demonstration (Day 2)
 
 ```
-Subject: How GIZ Ecuador cut review cycles by 70%
+Subject: How a B2B enterprise client cut review cycles by 70%
 Preview: From 9 days to 2.5 days. Here's how.
 
 Hi [Name],
 
-Before LiveApp, GIZ Ecuador managed deliverables over email.
+Before LiveApp, our B2B enterprise client managed deliverables over email.
 Reviews took 9 days on average. Deadlines slipped constantly.
 
 After switching to LiveApp, review cycles dropped to 2.5 days.

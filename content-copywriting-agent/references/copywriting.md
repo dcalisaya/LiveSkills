@@ -69,7 +69,7 @@ ACTION:    "Start your free trial → no credit card required."
 Best for: email copy, case studies, social posts.
 
 ```
-BEFORE: "Before LiveApp, GIZ Ecuador managed deliverables via email
+BEFORE: "Before LiveApp, a major B2B enterprise client managed deliverables via email
          threads and shared drives. Average review cycle: 9 days."
 AFTER:  "After LiveApp, review cycles dropped to 2.5 days.
          Client satisfaction scores went from 7.1 to 9.3."

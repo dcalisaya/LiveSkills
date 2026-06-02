@@ -5,7 +5,7 @@
 - Node.js **20 LTS** (or 22 LTS). Use `engines` field in `package.json`.
 - TypeScript **5.4+**. Strict mode: `"strict": true` in `tsconfig.json`.
 - Module system: ESM (`"type": "module"` in package.json, `.js` extensions in imports).
-- Package manager: `npm` with exact versions pinned (`npm install --save-exact`).
+- Package manager: `pnpm` with exact versions pinned (`pnpm add --save-exact`).
 - Local inference: Ollama on Mac Studio M4 Max — connect via `http://localhost:11434`.
 
 ## tsconfig Baseline

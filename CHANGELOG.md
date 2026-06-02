@@ -7,6 +7,15 @@ El versionado sigue el [SemVer (Versionado Semántico)](https://semver.org/spec/
 
 ---
 
+## [1.3.0] — 2026-06-02
+
+### Seguridad y Estandarización de Stack
+- **Gestor de Paquetes (`pnpm`)**: Se reemplazó el uso de `npm` por `pnpm` en todas las referencias, guías y configuraciones (Docker, workflows de CI/CD, comandos de prueba) por motivos de seguridad y rendimiento.
+- **Normalización del Stack UI**: Se eliminó la referencia a `Next.js` en los skills, dejando el estándar web de componentes y vistas basado exclusivamente en `React + Vite + TailwindCSS`.
+- **Limpieza de Referencias de Clientes**: Se removieron todas las referencias y menciones específicas a `GIZ`, `GNU Health` y `MAE Ecuador` en todos los archivos de skills y referencias, sustituyéndolas por nombres o descripciones genéricas de clientes B2B.
+
+---
+
 ## [1.2.0] — 2026-06-02
 
 ### Agregado

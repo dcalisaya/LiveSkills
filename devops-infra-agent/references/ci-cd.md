@@ -33,16 +33,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: 'pnpm'
 
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run typecheck
-      - run: npm test
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
 
   deploy:
     needs: test
@@ -63,8 +67,8 @@ jobs:
           ssh -p 2222 ${DEPLOY_USER}@${DEPLOY_HOST} << 'ENDSSH'
             cd ${DEPLOY_PATH}
             git pull origin main
-            npm ci --production
-            npm run build
+            pnpm install --prod --frozen-lockfile
+            pnpm build
             pm2 restart app --update-env
           ENDSSH
 
@@ -89,14 +93,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run typecheck
-      - run: npm test -- --coverage
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test -- --coverage
 ```
 
 ---
@@ -154,10 +161,11 @@ volumes:
 # Dockerfile
 FROM node:20-alpine AS builder
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci
+RUN corepack enable && corepack prepare pnpm@latest --activate
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 COPY . .
-RUN npm run build
+RUN pnpm build
 
 FROM node:20-alpine AS runner
 WORKDIR /app
@@ -323,7 +331,7 @@ Before any production deployment:
 # Option 1: Git revert
 cd /opt/app
 git revert HEAD --no-edit
-npm ci && npm run build
+pnpm install --frozen-lockfile && pnpm build
 pm2 restart app
 
 # Option 2: Previous Docker image
@@ -339,7 +347,7 @@ qm rollback 110 pre-deploy
 
 ```bash
 # Run down migration
-npm run migrate:down
+pnpm run migrate:down
 
 # Or restore from backup
 pg_restore -h localhost -U app_user -d liveapp --clean --if-exists /backups/pre-deploy.dump
