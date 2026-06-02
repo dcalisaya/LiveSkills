@@ -122,13 +122,80 @@
         "format": "test_plan + tests + coverage_notes | summary + issues + suggestions",
         "artifacts": ["test_files", "review_report"]
       }
+    },
+    {
+      "id": "audiovisual-agent",
+      "name": "Audiovisual Agent",
+      "domain": "DOM-AV",
+      "version": "1.0.0",
+      "path": "audiovisual-agent/SKILL.md",
+      "description": "Video production, scripting, storyboarding, motion graphics, editing, and delivery.",
+      "triggers": ["video", "motion", "storyboard", "script", "shoot", "footage", "edit", "animation", "production", "director", "camera", "audio", "voiceover", "subtitle", "render", "export"],
+      "languages": ["markdown"],
+      "references": [
+        "audiovisual-agent/references/pre-production.md",
+        "audiovisual-agent/references/post-production.md"
+      ],
+      "input": {
+        "required": ["task_description"],
+        "optional": ["format", "duration", "platform", "brand", "assets_available"]
+      },
+      "output": {
+        "format": "brief + script/storyboard + production_notes | edl + export_specs",
+        "artifacts": ["scripts", "storyboards", "shot_lists", "export_specs"]
+      }
+    },
+    {
+      "id": "data-analysis-agent",
+      "name": "Data Analysis Agent",
+      "domain": "DOM-DEV",
+      "version": "1.0.0",
+      "path": "data-analysis-agent/SKILL.md",
+      "description": "Data analysis, reporting, visualization, ETL pipelines, and statistical methods.",
+      "triggers": ["analyze", "report", "chart", "graph", "metrics", "KPI", "data", "CSV", "Excel", "database query", "statistics", "trends", "forecast", "ETL", "pipeline", "visualization", "pandas"],
+      "languages": ["python", "sql", "javascript"],
+      "references": [
+        "data-analysis-agent/references/analysis-patterns.md",
+        "data-analysis-agent/references/reporting.md"
+      ],
+      "input": {
+        "required": ["task_description", "data_source"],
+        "optional": ["output_format", "audience", "time_range", "comparison"]
+      },
+      "output": {
+        "format": "question + methodology + findings + visualizations + recommendations",
+        "artifacts": ["analysis_scripts", "charts", "reports", "datasets"]
+      }
+    },
+    {
+      "id": "project-management-agent",
+      "name": "Project Management Agent",
+      "domain": "DOM-OPS",
+      "version": "1.0.0",
+      "path": "project-management-agent/SKILL.md",
+      "description": "Project planning, sprint management, status reporting, agent orchestration, and coordination.",
+      "triggers": ["plan", "project", "timeline", "brief", "deliverable", "sprint", "roadmap", "milestone", "estimate", "scope", "schedule", "coordinate", "stakeholder", "status update", "kickoff", "retrospective"],
+      "languages": ["markdown"],
+      "references": [
+        "project-management-agent/references/planning.md",
+        "project-management-agent/references/coordination.md"
+      ],
+      "input": {
+        "required": ["task_description"],
+        "optional": ["project_name", "deadline", "team", "constraints", "framework"]
+      },
+      "output": {
+        "format": "brief/plan + deliverables + timeline + risks | status_report",
+        "artifacts": ["project_briefs", "sprint_plans", "status_reports", "roadmaps"]
+      }
     }
   ],
   "domains": {
-    "DOM-DEV": "Development — code, frontend, testing, architecture",
+    "DOM-DEV": "Development — code, frontend, testing, data analysis, architecture",
     "DOM-HST": "Hosting & Infrastructure — servers, deploy, monitoring",
     "DOM-MKT": "Marketing & Content — copy, SEO, campaigns, brand",
-    "DOM-AV": "Audiovisual — video, storyboards, production (planned)"
+    "DOM-AV": "Audiovisual — video, storyboards, production, motion graphics",
+    "DOM-OPS": "Operations — project management, coordination, orchestration"
   },
   "routing": {
     "strategy": "keyword_match",
