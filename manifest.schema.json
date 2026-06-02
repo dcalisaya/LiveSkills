@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LiveSkills Manifest Schema",
+  "description": "Schema for validating the LiveSkills agent manifest file.",
+  "type": "object",
+  "required": [
+    "name",
+    "version",
+    "description",
+    "maintainer",
+    "skills",
+    "domains",
+    "routing"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the skills repository."
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of the repository."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the repository."
+    },
+    "maintainer": {
+      "type": "string",
+      "description": "Name of the maintainer."
+    },
+    "skills": {
+      "type": "array",
+      "description": "List of skills registered in the repository.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "domain",
+          "version",
+          "path",
+          "description",
+          "triggers",
+          "languages",
+          "references",
+          "input",
+          "output"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+-agent$",
+            "description": "Unique identifier for the skill agent, ending with -agent (kebab-case)."
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable name of the skill."
+          },
+          "domain": {
+            "type": "string",
+            "pattern": "^DOM-[A-Z]+$",
+            "description": "Domain code matching the DOM-XXX pattern."
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "description": "Semantic versioning string (X.Y.Z)."
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+-agent/SKILL\\.md$",
+            "description": "Relative file path to the SKILL.md file."
+          },
+          "description": {
+            "type": "string",
+            "description": "Description used by agent classifiers to route tasks."
+          },
+          "triggers": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Keywords that trigger routing to this skill."
+          },
+          "languages": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Programming or markup languages used by this skill."
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9-]+-agent/references/[a-z0-9-]+\\.md$"
+            },
+            "description": "Relative file paths to reference markdown files."
+          },
+          "input": {
+            "type": "object",
+            "required": ["required"],
+            "properties": {
+              "required": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "optional": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            },
+            "additionalProperties": false
+          },
+          "output": {
+            "type": "object",
+            "required": ["format", "artifacts"],
+            "properties": {
+              "format": {
+                "type": "string",
+                "description": "Desired format or structure of the output."
+              },
+              "artifacts": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Types of artifacts produced by this skill."
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "domains": {
+      "type": "object",
+      "description": "Map of domain codes to their description.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "routing": {
+      "type": "object",
+      "required": ["strategy", "fallback", "instructions"],
+      "properties": {
+        "strategy": {
+          "type": "string",
+          "description": "Routing algorithm strategy name."
+        },
+        "fallback": {
+          "type": "string",
+          "description": "Default skill ID if no triggers match."
+        },
+        "instructions": {
+          "type": "string",
+          "description": "Text instructions for manual or LLM-based routing."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

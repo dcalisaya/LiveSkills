@@ -129,6 +129,8 @@ Cada entrada de skill en el manifiesto incluye:
 - **input/output schemas** — lo que el agente espera y entrega.
 - **references** — qué archivos de referencia cargar por tarea.
 
+*(Nota: La estructura de este manifiesto está regida por el archivo local `manifest.schema.json`, proporcionando autocompletado y validación de tipos en tiempo real en la mayoría de los IDEs modernos).*
+
 ---
 
 ## Uso en Claude CLI (OPUS)

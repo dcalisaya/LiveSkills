@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "./manifest.schema.json",
   "name": "LiveSkills",
   "version": "1.0.0",
   "description": "Agent skill directory for Live Developer's agentic infrastructure",
