@@ -7,6 +7,13 @@ El versionado sigue el [SemVer (Versionado Semántico)](https://semver.org/spec/
 
 ---
 
+## [1.3.1] — 2026-06-02
+
+### Modificaciones
+- **Clarificación de la Audiencia de Agentes**: Se amplió el README principal para documentar explícitamente la compatibilidad con agentes como Gemini, Antigravity-ide, Codex, Opencode y otros modelos Frontier.
+
+---
+
 ## [1.3.0] — 2026-06-02
 
 ### Seguridad y Estandarización de Stack

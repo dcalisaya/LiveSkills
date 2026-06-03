@@ -1,7 +1,7 @@
 # Live Developer — Repositorio de Skills para Agentes
 
 **Mantenedor:** Daniel Calisaya / Live Developer  
-**Audiencia:** Agentes OPUS / Claude CLI que operan dentro de la infraestructura agente de Live Developer  
+**Audiencia:** Agentes de Inteligencia Artificial (Gemini, Antigravity-ide, Codex, Opencode, OPUS / Claude CLI y modelos Frontier a la fecha) que operan dentro de la infraestructura agente de Live Developer  
 **Propósito:** Directorio de skills fundamentales para flujos de trabajo de agentes especializados — auditados, versionados y listos para producción.
 
 ---
@@ -133,9 +133,9 @@ Cada entrada de skill en el manifiesto incluye:
 
 ---
 
-## Uso en Claude CLI (OPUS)
+## Uso en Modelos Frontier y Entornos de Agentes
 
-Los skills son cargados por OPUS cuando una tarea coincide con la descripción de los disparadores del skill. Para hacer referencia a un skill de manera explícita:
+Los skills son consumidos por agentes autónomos (como Gemini, Antigravity-ide, Codex, Opencode, OPUS / Claude CLI y modelos Frontier a la fecha) cuando una tarea coincide con los disparadores (triggers) del skill. Para hacer referencia a un skill de manera explícita en entornos de terminal o llamadas de CLI:
 
 ```bash
 claude --skill ./dev-code-agent "Create a Python FastAPI endpoint with JWT auth"
